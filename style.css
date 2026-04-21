@@ -1,0 +1,21 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --accent-color: hsl(120, 100%, 50%);
+    --warning-color: orange;
+    --bg-color: rgb(255, 255, 255);
+}
+
+body {
+    background-color: var(--bg-color, #ffffff);
+    color: var(--primary-color, black);
+}
+
+header{
+    background-color: color-mix(in srgb, var(--primary-color, #3498db) 50%, var(--secondary-color, #2ecc71) 50%);
+    border-bottom: 2px solid var(--accent-color, hsl(120, 100%, 50%));
+}
+
+section{
+    border: 1px solid var(--warning-color, orange);
+}
