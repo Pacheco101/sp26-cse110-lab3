@@ -1,2 +1,2 @@
-# Lab 2 - Starter
+# Lab 3 - Starter
 https://pacheco101.github.io/sp26-cse110-lab3/
