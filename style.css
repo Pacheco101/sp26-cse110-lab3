@@ -5,9 +5,84 @@
     --warning-color: orange;
     --bg-color: rgb(255, 255, 255);
     --main-font: "Roboto", sans-serif;
+    --gamut-color: color-mix(in srgb, var(--primary-color) 50%, var(--secondary-color) 50%);
+    --p3-green: color(display-p3 0 1 0);
 }
 
+footer {
+    border-top: 0.1in solid var(--accent-color, hsl(120, 100%, 50%));
+    padding-top: 60px;
+    padding-bottom: 40pt;
+    text-align: center;
+}
+
+nav {
+    display: inline-block;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1000;
+}
+
+.hidden-note {
+    display: none;
+}
+
+#meeting-notes {
+    display: block;
+    background-color: var(--gamut-color);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+
+* {box-sizing: border-box;}
+[href="http"] {font-style: italic; }
+main p { color : var(--primary-color, #3498db); 
+font-size: 1.2rem; 
+font-weight: 500; 
+}
+
+section:has(img) {
+    background-color: var(--gamut-color);
+}
+
+.attendance-list {
+    list-style-type: square;
+    padding-left: 20px;
+
+    & li {
+        color: #555;
+        &:hover { color: var(--secondary-color); } 
+    }
+}
+
+.media-flex {
+    display: flex;                          
+    justify-content: space-around;          
+    align-items: baseline;                  
+    flex-wrap: wrap;                       
+}
+
+.info-grid {
+    display: grid;                          
+    grid-template-columns: 1fr 1fr 1fr;     
+    gap: 20px;                              
+    align-content: start;                   
+}
+
+@media (max-width: 768px) {                 
+    main { width: 95%; }
+    .info-grid { grid-template-columns: 1fr; }
+}
+
+section > h2{ text-decoration: underline;}
+h2 + p { font-style: italic; color: var(--secondary-color, #2ecc71); }
+h2 ~ p { font-weight: bold; color: var(--accent-color, hsl(120, 100%, 50%)); }
+
 main {
+    height: 50vh;
     width: 90%;
     max-width: 1200px;
 
@@ -36,6 +111,7 @@ body {
 }
 
 header{
+    position: relative;
     background-color: color-mix(in srgb, var(--primary-color, #3498db) 50%, var(--secondary-color, #2ecc71) 50%);
     border-bottom: 2px solid var(--accent-color, hsl(120, 100%, 50%));
     padding-top: 60px;
