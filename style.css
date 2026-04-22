@@ -51,11 +51,14 @@ section:has(img) {
 .attendance-list {
     list-style-type: square;
     padding-left: 20px;
+}
 
-    & li {
-        color: #555;
-        &:hover { color: var(--secondary-color); } 
-    }
+.attendance-list li {
+    color: #555;
+}
+
+.attendance-list li:hover {
+    color: var(--secondary-color);
 }
 
 .media-flex {
